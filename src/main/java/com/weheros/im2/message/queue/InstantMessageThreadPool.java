@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
  * @version 1.0
  * @created 27-??-2014 12:11:09
  */
-public class HandlerThreadPool {
+public class InstantMessageThreadPool {
 	public static ExecutorService executor = Executors.newFixedThreadPool(200);
 
 	

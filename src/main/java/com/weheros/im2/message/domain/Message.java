@@ -26,6 +26,53 @@ public class Message {
 	 * it is text. or it is a url of audio,video,file.
 	 */
 	private String content;
+	/**
+	 * true, the short message is need to be send right now.
+	 * false,the message will be push into queue and send to target user later.
+	 */
+	private Boolean isSendImmediately;
+	/**
+	 * true,the message will be send mutiple times after first failure.
+	 *      the message should be persisted while send fail.
+	 * 
+	 */
+	private Boolean isRetryAfterFail;
+	/**
+	 * true,online message.
+	 * false,offline message.
+	 *       the message should be persisted and some time the client will pull message from server.
+	 */
+	private Boolean isOnline;
+    
+	public Message(){
+		this.isSendImmediately=false;
+		this.isRetryAfterFail=true;
+		this.isOnline=true;
+	}
+
+	public Boolean getIsOnline() {
+		return isOnline;
+	}
+
+	public void setIsOnline(Boolean isOnline) {
+		this.isOnline = isOnline;
+	}
+
+	public Boolean getIsSendImmediately() {
+		return isSendImmediately;
+	}
+
+	public void setIsSendImmediately(Boolean isSendImmediately) {
+		this.isSendImmediately = isSendImmediately;
+	}
+
+	public Boolean getIsRetryAfterFail() {
+		return isRetryAfterFail;
+	}
+
+	public void setIsRetryAfterFail(Boolean isRetryAfterFail) {
+		this.isRetryAfterFail = isRetryAfterFail;
+	}
 
 	public String getType() {
 		return type;
